@@ -2,6 +2,7 @@
   font-family: "Karla";
   src: url("../assets/fonts/Karla-VariableFont_wght.ttf") format("truetype");
   font-weight: 400 700;
+  font-display: swap;
 }
 
 :root {
@@ -21,6 +22,20 @@
 
   /* Typography */
   --ff-base: "Karla", sans-serif;
+  --fw-regular: 400;
+  --fw-bold: 700;
+
+  --lh-body: 1.6;
+  --lh-heading: 1.2;
+}
+
+body {
+  accent-color: var(--clr-primary-green-600);
+  font-size: 1rem;
+  font-family: var(--ff-base);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-body);
+  background-color: var(--clr-primary-pale-green-200);
 }
 
 style {
