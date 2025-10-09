@@ -6,12 +6,19 @@ function validateField(field) {
 		: field.parentElement.querySelector(".error-message");
 
 	if (!field.validity.valid) {
-		console.log("invalid field:", field);
 		errorMessageElement.textContent = field.dataset.error || "This field is required";
 		return false;
 	}
+
+	errorMessageElement.textContent = "";
 	return true;
 }
+
+form.querySelectorAll("input, textarea").forEach(input => {
+	input.addEventListener("blur", () => {
+		validateField(input);
+	})
+});
 
 form.addEventListener("submit", function(e) {
 	e.preventDefault();
