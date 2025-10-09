@@ -38,6 +38,7 @@ form.addEventListener("submit", function(e) {
 	if (isValid) {
 		// TODO
 	} else {
-		// TODO
+		// Adding focus to first invalid element on submit
+		form.querySelector(":invalid").focus() 
 	}
 });
