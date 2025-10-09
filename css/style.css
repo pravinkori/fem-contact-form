@@ -138,6 +138,18 @@ body {
       background-color: var(--clr-neutral-grey-900);
     }
   }
+
+  input:user-invalid {
+    border-color: var(--clr-primary-red);
+  }
+
+  .error-message {
+    color: var(--clr-primary-red);
+  }
+
+  .error-message:empty {
+    display: none;
+  }
 }
 
 .attribution {
