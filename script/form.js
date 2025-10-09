@@ -17,7 +17,7 @@ function validateField(field) {
 form.querySelectorAll("input, textarea").forEach(input => {
 	input.addEventListener("blur", () => {
 		validateField(input);
-	})
+	});
 });
 
 form.addEventListener("submit", function(e) {
@@ -36,9 +36,10 @@ form.addEventListener("submit", function(e) {
 	});
 
 	if (isValid) {
-		// TODO
+		// Reset the form after submit
+		form.reset();
 	} else {
 		// Adding focus to first invalid element on submit
-		form.querySelector(":invalid").focus() 
+		form.querySelector(":invalid").focus();
 	}
 });

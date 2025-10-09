@@ -76,6 +76,7 @@ body {
 
   .form-group {
     display: grid;
+    grid-auto-rows: min-content;
   }
 
   fieldset:has([required]) legend,
