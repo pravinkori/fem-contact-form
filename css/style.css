@@ -38,6 +38,108 @@ body {
   background-color: var(--clr-primary-pale-green-200);
 }
 
+@layer layout {
+  .span-all {
+    grid-column: 1/-1;
+  }
+}
+
+@layer form {
+  .contact {
+    padding: 2rem;
+    border-radius: 1rem;
+    max-inline-size: 700px;
+    margin-inline: auto;
+    background-color: var(--clr-neutral-white);
+  }
+
+  form {
+    display: grid;
+    gap: 1rem;
+    @media (width > 425px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  fieldset {
+    display: grid;
+    padding: 0;
+    border: 0;
+    gap: inherit;
+    grid-template-columns: inherit;
+  }
+
+  textarea {
+    resize: vertical;
+    height: 4lh;
+  }
+
+  .form-group {
+    display: grid;
+  }
+
+  fieldset:has([required]) legend,
+  .form-group:has(:not([type="radio"])[required]) label {
+    display: flex;
+    gap: 1ch;
+
+    &::after {
+      content: "*";
+      color: var(--clr-primary-green-600);
+    }
+  }
+
+  input,
+  textarea,
+  .form-group:has([type="radio"]) {
+    padding: 0.5em 1em;
+    border: 1px solid var(--clr-neutral-grey-900);
+    border-radius: 8px;
+    &:hover,
+    &:focus-visible {
+      outline-color: var(--clr-primary-green-600);
+    }
+  }
+
+  [type="radio"],
+  [type="checkbox"] {
+    width: 1rem;
+  }
+
+  .form-group:has([type="radio"], [type="checkbox"]) {
+    display: flex;
+    gap: 1ch;
+  }
+
+  .form-group:has([type="radio"]) {
+    position: relative;
+
+    label::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+    }
+  }
+
+  .form-group:has([type="radio"]:checked) {
+    background-color: var(--clr-primary-pale-green-200);
+    border-color: var(--clr-primary-green-600);
+  }
+
+  button {
+    padding: 0.5em 1em;
+    color: var(--clr-neutral-white);
+    background-color: var(--clr-primary-green-600);
+    border: 0;
+    border-radius: 8px;
+
+    &:hover,
+    &:focus-visible {
+      background-color: var(--clr-neutral-grey-900);
+    }
+  }
+}
+
 style {
   .attribution {
     font-size: 11px;
